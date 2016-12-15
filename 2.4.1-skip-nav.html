@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Bypass Block Example</title>
+		<meta name="description" content="An example of a skip navigation link that is only visile to keyboard users.">
+		<meta name="author" content="Zoltan">
+
+		<meta property="og:title" content="Useragentman.com Accessibility Examples - Skip Navigation" />
+		<meta property="og:description" content="An example of a skip navigation link that is only visile to keyboard users." />
+		<meta property="og:image" content="previews/2.4.1-skip-nav.jpg" />
+
+		<meta name="twitter:card" content="photo">
+		<meta name="twitter:title" content="Useragentman.com Accessibility Examples - Skip Navigation">
+		<meta name="twitter:image" content="previews/2.4.1-skip-nav.jpg">
+		<meta name="author" content="Zoltan Hawryluk">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/2.4.1-skip-nav.css" type="text/css" />
+
+	</head>
+
+	<body>
+		<a
+			href="#main-content" 
+			class="bypass-block-link visually-hidden visible-when-focused"
+		>
+			Skip Navigation
+		</a>
+		
+		<header>
+			<div class="logo">
+				<span class="acme">ACME</span> <span class="corp">Corporation</span>
+				<div class="motto">Quality Is Our #1 Dream</div>
+			</div>
+			
+			
+			<nav>
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">News</a></li>
+					<li><a href="">About Us</a></li>
+					<li><a href="">Leadership</a></li>
+					<li><a href="">Our Employees</a></li>
+					<li><a href="">Mission Statement</a></li>
+					<li><a href="">Philanthropy</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+<main id="main-content" class="bypass-block-target" tabindex="-1">
+	<h1 class="heading">Skip Navigation Example</h1>
+	
+	<p>
+		This page has a hidden "Skip Navigation" link in it.  The link is only
+		visible when you tab into it using a keyboard.  This link is a 
+		requirement if you are trying to conform to WCAG Level A
+		(specifically, <a href="https://www.wuhcag.com/bypass-blocks">section 
+		2.4.1 &mdash; Bypass Blocks</a>).
+	</p>
+	
+	<p>
+		If you are using a screenreader, you will notice that when you tab into
+		the skip navigation link and press enter, you will not only jump to the
+		main content of the screen, but the screen reader will also read the
+		content of that element.  You will also notice that the main content
+		has an orange outline like the other tabbable items in the page, 
+		but will lose that outline when you tab out. These features are
+		important for users who are visual impaired.
+	</p>
+	
+	<p>
+		Information on how this was all done is available on my 
+		<a href="">blog post</a> on <a href="http://useragentman.com">my blog,
+		User Agent Man</a>.
+	</p>
+</main>
+		
+
+		<script src="js/2.4.1-skip-nav.js"></script>
+	</body>
+</html>

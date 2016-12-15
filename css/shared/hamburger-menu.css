@@ -1,0 +1,48 @@
+.hamburger-menu-button {
+	position: relative;
+}
+
+.hamburger-menu-button:after {
+	opacity: 1;
+	content: "☰";
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.hamburger-menu-content {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.hamburger-menu-button:checked + .hamburger-menu-content {
+	display: block;
+	position: absolute;
+}
+
+@media only screen and (min-width: 768px) {
+	.hamburger-menu-button {
+		display: none;
+	}
+	
+	.hamburger-menu-content {
+		display: block;
+		position: static;
+		width: auto;
+		height: auto;
+	}
+	
+	.hamburger-menu-button:checked + .hamburger-menu-content {
+		display: block;
+		position: static;
+	}
+}
