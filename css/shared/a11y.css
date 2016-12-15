@@ -39,23 +39,42 @@
 }
 
 /*
- * We want to make sure that the target is not focused, unless it is the 
- * focused when the user hits a `.bypass-block-link`.  So we turn off the 
- * outline if it is just a focus ....
+ * Style for "Skip Navigation" type links.  Should have an href linked to 
+ * a `.bypass-block-target` element.
  */
-.a11y-target:focus {
+.bypass-block-link:focus {
+	position: absolute;
+	text-decoration: none;
+	background: #ffffcc;
+	padding: 0.2em;
+	z-index: 10;
+}
+
+/*
+ * We don't want the `.bypass-block-target` to have an outline on *just* focus,
+ * since this will look strange if regular users click inside this element,
+ * since it will look like it was tabbed into
+ */
+.bypass-block-target:focus {
 	outline: none;
 }
 
 /*
- * ... but we turn it back on if is also a target (we also style the other
- * focused elements here just to ensure they are in one rule.
+ * We do, however, want the `.bypass-block-target` to have an outline when
+ * it has focus and it is the target of the document (i.e. the hash tag of the
+ * document URL is the same as the "Skip Nav" link).
+ * 
+ * Note that this style is the same as the focus state on all the tabbable 
+ * elements.  It doesn't have to be.  WCAG 2.4.7 – Focus Visible (Level AA) 
+ * only requires that the focus state is visible, so you can have, say, the 
+ * focus state of a button different than that of a form element. 
  */
-.a11y-target:focus:target,
+.bypass-block-target:focus:target,
 [tabindex="0"]:focus,
 [tabindex="1"]:focus,
 a:focus,
 button:focus,
 input:focus {
 	outline: solid 2px orange;
+	border: none;
 }
