@@ -78,3 +78,18 @@ input:focus {
 	outline: solid 2px orange;
 	border: none;
 }
+
+
+[tabindex="0"]:hover:focus,
+[tabindex="1"]:hover:focus,
+a:hover:focus,
+button:hover:focus,
+input:hover:focus,
+[tabindex="0"]:focus:active,
+[tabindex="1"]:focus:active,
+a:focus:active,
+button:focus:active,
+input:focus:active {
+	outline: none;
+	border: none;
+}
