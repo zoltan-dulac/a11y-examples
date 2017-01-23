@@ -2,7 +2,11 @@ var a11yHelpers = new function () {
 	var me = this,
 		isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
 		bodyEl = document.body,
+		// We cache this lookup, since it returns a live node list and is *always*
+		// up-to-date with the document (unlike jQuery).
 		tabbableElsList = document.querySelectorAll('[tabindex="0"], a, :enabled'),
+		// This is the max amount a tabindex can have according to 
+		// https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
 		tabIndexMax = 32767;
 	
 	function fixFirefoxFlexbox() {
@@ -13,7 +17,6 @@ var a11yHelpers = new function () {
 	
 	function setTabIndex(el, val) {
 		el.dataset.a11yHelpersOrigTabIndex = el.tabIndex;
-		//el.setAttribute('tabindex', val);
 		el.tabIndex = val;
 	}
 	
@@ -21,7 +24,6 @@ var a11yHelpers = new function () {
 		var defaultTabIndex = el.dataset.a11yHelpersOrigTabIndex;
 		
 		if (defaultTabIndex !== undefined) {
-			//el.setAttribute('tabindex', defaultTabIndex);
 			el.tabIndex = defaultTabIndex;
 		}
 	}
@@ -64,10 +66,7 @@ var a11yHelpers = new function () {
 	
 	function handleFirefoxFocusEvent(e) {
 		var target = e.target,
-			i;
-			
-		
-		var tabbableEls = [].slice.call(tabbableElsList),
+			tabbableEls = [].slice.call(tabbableElsList),
 			index = clearAndFindIndex(tabbableEls, target);
 			
 			if (index !== 0) {
