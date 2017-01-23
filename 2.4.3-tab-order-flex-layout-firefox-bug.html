@@ -9,11 +9,11 @@
 
 		<meta property="og:title" content="Fixing Firefox Flex Layout Tabbing Bug " />
 		<meta property="og:description" content="This page contains a fix for a accessibility bug Firefox has when using flex-layout's order CSS property. " />
-		<meta property="og:image" content="previews/2.4.3-tab-order-flex-layout-firefox-bug.jpg" />
+		<meta property="og:image" content="http://www.useragentman.com/blog/wp-content/uploads/2017/01/flex_chrome_515.gif" />
 
 		<meta name="twitter:card" content="photo">
 		<meta name="twitter:title" content="Fixing Firefox Flex Layout Tabbing Bug ">
-		<meta name="twitter:image" content="previews/2.4.3-tab-order-flex-layout-firefox-bug.jpg">
+		<meta name="twitter:image" content="http://www.useragentman.com/blog/wp-content/uploads/2017/01/flex_chrome_515.gif">
 		<meta name="author" content="Zoltan Hawryluk">
 
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -26,7 +26,7 @@
 		<main class="example-main">
 			<h1>CSS Flexbox</h1>
 			<h2>No Ordering Applied</h2>
-			<div>
+			<div class="flex-example">
 				<button class="btn">
 					<strong>1</strong>
 					<br> This appears first in source order.
@@ -45,27 +45,27 @@
 				</button>
 			</div>
 			<h2>Re-Ordered</h2>
-			<div class="shuffled">
-				<button class="btn">
-					<strong>1</strong>
-					<br> This appears first in source order.
-				</button>
-				<button class="btn">
-					<strong>2</strong>
-					<br> This appears second in source order.
-				</button>
-				<button class="btn">
-					<strong>3</strong>
-					<br> This appears third in source order.
-				</button>
-				<button class="btn">
-					<strong>4</strong>
-					<br> This appears fourth in source order.
-				</button>
-			</div>
+<div class="flex-example shuffled">
+	<button class="btn">
+		<strong>1</strong>
+		<br> This appears first in source order.
+	</button>
+	<button class="btn">
+		<strong>2</strong>
+		<br> This appears second in source order.
+	</button>
+	<button class="btn">
+		<strong>3</strong>
+		<br> This appears third in source order.
+	</button>
+	<button class="btn">
+		<strong>4</strong>
+		<br> This appears fourth in source order.
+	</button>
+</div>
 			
 			<h2>Re-Ordered Links</h2>
-			<div class="shuffled">
+			<div class="flex-example shuffled">
 				<a href="#" class="btn">
 					<strong>1</strong>
 					<br> This appears first in source order.
@@ -85,7 +85,7 @@
 			</div>
 			
 			<h2>Re-Ordered div elements with tabindex = 0</h2>
-			<div class="shuffled">
+			<div class="flex-example shuffled">
 				<div tabindex="0" class="btn">
 					<strong>1</strong>
 					<br> This appears first in source order.
@@ -107,7 +107,8 @@
 			
 			
 			<p>
-				This example was originally used in the post <a href="http://adrianroselli.com/2015/10/html-source-order-vs-css-display-order.html">HTML Source Order vs CSS Display Order</a>.
+				This example is based on one originally used in the excellent post <a href="http://adrianroselli.com/2015/10/html-source-order-vs-css-display-order.html">HTML Source Order vs CSS Display Order</a>
+				by <a href="http://adrianroselli.com/">Adrian Roselli</a>.
 			</p>
 		</main>
 		<script src="js/a11yHelpers.js"></script>
