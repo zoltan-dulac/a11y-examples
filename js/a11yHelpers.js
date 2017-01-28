@@ -1,6 +1,7 @@
 var a11yHelpers = new function () {
 	var me = this,
-		isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
+		userAgent = navigator.userAgent;
+		isFirefoxDesktop = userAgent.indexOf('Firefox') > -1 && userAgent.indexOf('Mobile') == -1,
 		bodyEl = document.body,
 		tabbableElsList = document.querySelectorAll('[tabindex="0"], a, :enabled'),
 		tabIndexMax = 32767;
@@ -83,7 +84,7 @@ var a11yHelpers = new function () {
 	}
 	
 	me.init = function () {
-		if (isFirefox && bodyEl.classList.contains('a11y-fix-firefox-flexbox')) {
+		if (isFirefoxDesktop && bodyEl.classList.contains('a11y-fix-firefox-flexbox')) {
 			fixFirefoxFlexbox();
 		}
 	};
