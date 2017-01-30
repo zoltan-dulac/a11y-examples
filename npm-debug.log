@@ -6,10 +6,10 @@
 2 info using npm@3.7.3
 3 info using node@v5.8.0
 4 info git [ 'status', '--porcelain' ]
-5 info lifecycle a11y-examples@0.1.7~preversion: a11y-examples@0.1.7
-6 silly lifecycle a11y-examples@0.1.7~preversion: no script for preversion, continuing
+5 info lifecycle a11y-examples@0.1.8~preversion: a11y-examples@0.1.8
+6 silly lifecycle a11y-examples@0.1.8~preversion: no script for preversion, continuing
 7 verbose version.write data { name: 'a11y-examples',
-7 verbose version.write   version: '0.1.7',
+7 verbose version.write   version: '0.1.8',
 7 verbose version.write   description: 'A repo that contains examples to help devs comply with WCAG 2.0.',
 7 verbose version.write   main: 'index.js',
 7 verbose version.write   scripts: { test: 'echo "Error: no test specified" && exit 1' },
@@ -29,13 +29,13 @@
 7 verbose version.write   license: 'MIT',
 7 verbose version.write   bugs: { url: 'https://github.com/zoltan-dulac/a11y-examples/issues' },
 7 verbose version.write   homepage: 'https://github.com/zoltan-dulac/a11y-examples#readme' } to package.json
-8 info lifecycle a11y-examples@0.1.7~version: a11y-examples@0.1.7
-9 silly lifecycle a11y-examples@0.1.7~version: no script for version, continuing
+8 info lifecycle a11y-examples@0.1.8~version: a11y-examples@0.1.8
+9 silly lifecycle a11y-examples@0.1.8~version: no script for version, continuing
 10 info git [ 'add', '/Users/zhawry/git/a11y-examples/package.json' ]
-11 info git [ 'commit', '-m', '0.1.7' ]
-12 info git [ 'tag', 'v0.1.7', '-am', '0.1.7' ]
-13 verbose stack Error: Command failed: git tag v0.1.7 -am 0.1.7
-13 verbose stack fatal: tag 'v0.1.7' already exists
+11 info git [ 'commit', '-m', '0.1.8' ]
+12 info git [ 'tag', 'v0.1.8', '-am', '0.1.8' ]
+13 verbose stack Error: Command failed: git tag v0.1.8 -am 0.1.8
+13 verbose stack fatal: tag 'v0.1.8' already exists
 13 verbose stack
 13 verbose stack     at ChildProcess.exithandler (child_process.js:202:12)
 13 verbose stack     at emitTwo (events.js:100:13)
@@ -48,8 +48,8 @@
 17 error node v5.8.0
 18 error npm  v3.7.3
 19 error code 128
-20 error Command failed: git tag v0.1.7 -am 0.1.7
-20 error fatal: tag 'v0.1.7' already exists
+20 error Command failed: git tag v0.1.8 -am 0.1.8
+20 error fatal: tag 'v0.1.8' already exists
 21 error If you need help, you may report this error at:
 21 error     <https://github.com/npm/npm/issues>
 22 verbose exit [ 1, true ]

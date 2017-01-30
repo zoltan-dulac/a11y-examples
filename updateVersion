@@ -69,7 +69,7 @@ then
 	echo "Pushing tag"
 	git tag v$TAG
 	git push origin v$TAG
-	echo "Updating npm"
+	echo "Updating npm"	
 	npm version patch
 else 
 	for i in $FILELIST
