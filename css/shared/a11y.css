@@ -39,18 +39,6 @@
 }
 
 /*
- * Style for "Skip Navigation" type links.  Should have an href linked to 
- * a `.bypass-block-target` element.
- */
-.bypass-block-link:focus {
-	position: absolute;
-	text-decoration: none;
-	background: #ffffcc;
-	padding: 0.2em;
-	z-index: 10;
-}
-
-/*
  * We don't want the `.bypass-block-target` to have an outline on *just* focus,
  * since this will look strange if regular users click inside this element,
  * since it will look like it was tabbed into
@@ -70,26 +58,28 @@
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target,
-[tabindex="0"]:focus,
-[tabindex="1"]:focus,
+[tabindex]:not([tabindex="-1"]):focus,
 a:focus,
-button:focus,
-input:focus {
+:enabled:focus {
+	/* You can replace this with whatever style you want for focus state */
 	outline: solid 2px orange;
-	border: none;
+}
+
+/*
+ * The above selector will match focusable elements when they are clicked
+ * with a mouse.  If you don't want that to happen, use this rule. 
+ */
+[tabindex]:not([tabindex="-1"]):hover:focus,
+a:hover:focus,
+:enabled:hover:focus,
+[tabindex]:not([tabindex="-1"]):focus:active,
+a:focus:active,
+:enabled:focus:active {
+	outline: none;
 }
 
 
-[tabindex="0"]:hover:focus,
-[tabindex="1"]:hover:focus,
-a:hover:focus,
-button:hover:focus,
-input:hover:focus,
-[tabindex="0"]:focus:active,
-[tabindex="1"]:focus:active,
-a:focus:active,
-button:focus:active,
-input:focus:active {
-	outline: none;
-	border: none;
+[tabindex]:not([tabindex="-1"]) {
+	background-color: black;
+	color: #ccccff;
 }

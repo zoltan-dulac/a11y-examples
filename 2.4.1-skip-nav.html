@@ -24,7 +24,7 @@
 
 	<body>
 		<a
-			href="2.4.1-skip-nav.htmlmain-content" 
+			href="#main-content" 
 			class="bypass-block-link visually-hidden visible-when-focused"
 		>
 			Skip Navigation
@@ -35,7 +35,6 @@
 				<span class="acme">ACME</span> <span class="corp">Corporation</span>
 				<div class="motto">Quality Is Our #1 Dream</div>
 			</div>
-			
 			
 			<nav>
 				<ul>
@@ -51,35 +50,33 @@
 			</nav>
 		</header>
 		
-<main id="main-content" class="bypass-block-target" tabindex="-1">
-	<h1 class="heading">Skip Navigation Example</h1>
-	
-	<p>
-		This page has a hidden "Skip Navigation" link in it.  The link is only
-		visible when you tab into it using a keyboard.  This link is a 
-		requirement if you are trying to conform to WCAG Level A
-		(specifically, <a href="https://www.wuhcag.com/bypass-blocks">section 
-		2.4.1 &mdash; Bypass Blocks</a>).
-	</p>
-	
-	<p>
-		If you are using a screenreader, you will notice that when you tab into
-		the skip navigation link and press enter, you will not only jump to the
-		main content of the screen, but the screen reader will also read the
-		content of that element.  You will also notice that the main content
-		has an orange outline like the other tabbable items in the page, 
-		but will lose that outline when you tab out. These features are
-		important for users who are visual impaired.
-	</p>
-	
-	<p>
-		Information on how this was all done is available on my 
-		<a href="http://www.useragentman.com/blog/2016/12/15/implementing-a-skip-navigation-link-requires-more/">blog post</a> at <a href="http://useragentman.com">
-		User Agent Man</a>.
-	</p>
-</main>
+		<main id="main-content" class="bypass-block-target" tabindex="-1">
+			<h1 class="heading">Skip Navigation Example</h1>
 			
-
-		<script src="js/2.4.1-skip-nav.js"></script>
+			<p>
+				This page has a hidden "Skip Navigation" link in it.  The link is only
+				visible when you tab into it using a keyboard.  This link is a 
+				requirement if you are trying to conform to WCAG Level A
+				(specifically, <a href="https://www.wuhcag.com/bypass-blocks">section 
+				2.4.1 &mdash; Bypass Blocks</a>).
+			</p>
+			
+			<p>
+				If you are using a screenreader, you will notice that when you tab into
+				the skip navigation link and press enter, you will not only jump to the
+				main content of the screen, but the screen reader will also read the
+				content of that element.  You will also notice that the main content
+				has an orange outline like the other tabbable items in the page, 
+				but will lose that outline when you tab out. These features are
+				important for users who are visual impaired.
+			</p>
+			
+			<p>
+				Information on how this was all done is available on my 
+				<a href="http://www.useragentman.com/blog/2016/12/15/implementing-a-skip-navigation-link-requires-more/">blog post</a> at <a href="http://useragentman.com">
+				User Agent Man</a>.
+			</p>
+		</main>
+			
 	</body>
 </html>

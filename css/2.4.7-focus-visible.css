@@ -1,0 +1,14 @@
+@import "shared/reset.css";
+@import "shared/a11y.css";
+
+body {
+	margin: 1em;
+	line-height: 1.4;
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
+fieldset {
+	margin-top: 1em;
+	border: solid 1px #ccc;
+	padding: 1em;
+}

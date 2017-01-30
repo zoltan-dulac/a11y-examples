@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Example of WCAG 2.4.7 — Focus Visible</title>
+		<meta name="description" content="An example of how to ensure all your focusable elements have a CSS focus state without impacting mouse users.">
+		<meta name="author" content="zoltan">
+
+		<meta property="og:title" content="Example of WCAG 2.4.7 — Focus Visible" />
+		<meta property="og:description" content="An example of how to ensure all your focusable elements have a CSS focus state without impacting mouse users." />
+		<meta property="og:image" content="previews/2.4.7-focus-visible.jpg" />
+
+		<meta name="twitter:card" content="photo">
+		<meta name="twitter:title" content="Example of WCAG 2.4.7 — Focus Visible">
+		<meta name="twitter:image" content="previews/2.4.7-focus-visible.jpg">
+		<meta name="author" content="Zoltan Hawryluk">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/2.4.7-focus-visible.css" type="text/css" />
+
+	</head>
+
+	<body>
+		<p>
+			This is an example of page that conforms to 
+			<a href="https://www.wuhcag.com/focus-visible">WCAG guideline 2.4.7 
+			&mdash; Focus Visible</a>.  If you a keyboard to navigate through the page
+			using the tab key, you will notice that all the elements have an orange
+			outline when they have focus.  It shouldn't affect 
+			elements that have a tab index of -1</a> but should affect 
+			<a href="#" tabindex="20">elements that have non-zero tabindexes</a>.
+				
+			</a>
+		</p>	
+		
+		<form>
+			<fieldset>
+				<legend>Search this site!</legend>
+					<label for="search-input">Search for:</label>
+					<input aria-label="search term" id="search-input" type="text" />
+					<select aria-label="Section of the site to search">
+						<option>on the whole site</option>
+						<option>on just the articles</option>
+						<option>on just the comments</option>
+					</select>
+					<input type="submit" value="Search" />
+			</fieldset>
+		</form>
+
+	</body>
+</html>
