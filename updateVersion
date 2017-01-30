@@ -4,7 +4,7 @@
 # Updates bower version automatically
 #######################################
 
-FILELIST="bower.json js/*.js css/shared/a11y.css"
+FILELIST="bower.json package.json js/*.js css/shared/a11y.css"
 
 getAnswer() {
 	read ANS
