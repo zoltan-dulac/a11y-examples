@@ -1,6 +1,6 @@
 {
   "name": "a11y-examples",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A repo that contains examples to help devs comply with WCAG 2.0.",
   "main": "index.js",
   "scripts": {
