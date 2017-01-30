@@ -11,7 +11,7 @@
     "url": "git+https://github.com/zoltan-dulac/a11y-examples.git"
   },
   "files": [
-    "css/shared/a11y.js",
+    "css/shared/*.js",
     "js/*.js"
   ],
   "keywords": [
