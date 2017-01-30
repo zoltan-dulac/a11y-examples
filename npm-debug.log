@@ -2,14 +2,14 @@
 1 verbose cli [ '/Users/zhawry/.nvm/versions/node/v5.8.0/bin/node',
 1 verbose cli   '/Users/zhawry/.nvm/versions/node/v5.8.0/bin/npm',
 1 verbose cli   'version',
-1 verbose cli   'patch' ]
+1 verbose cli   '0.1.10' ]
 2 info using npm@3.7.3
 3 info using node@v5.8.0
 4 info git [ 'status', '--porcelain' ]
-5 info lifecycle a11y-examples@0.1.9~preversion: a11y-examples@0.1.9
-6 silly lifecycle a11y-examples@0.1.9~preversion: no script for preversion, continuing
+5 info lifecycle a11y-examples@0.1.10~preversion: a11y-examples@0.1.10
+6 silly lifecycle a11y-examples@0.1.10~preversion: no script for preversion, continuing
 7 verbose version.write data { name: 'a11y-examples',
-7 verbose version.write   version: '0.1.9',
+7 verbose version.write   version: '0.1.10',
 7 verbose version.write   description: 'A repo that contains examples to help devs comply with WCAG 2.0.',
 7 verbose version.write   main: 'index.js',
 7 verbose version.write   scripts: { test: 'echo "Error: no test specified" && exit 1' },
@@ -29,13 +29,13 @@
 7 verbose version.write   license: 'MIT',
 7 verbose version.write   bugs: { url: 'https://github.com/zoltan-dulac/a11y-examples/issues' },
 7 verbose version.write   homepage: 'https://github.com/zoltan-dulac/a11y-examples#readme' } to package.json
-8 info lifecycle a11y-examples@0.1.9~version: a11y-examples@0.1.9
-9 silly lifecycle a11y-examples@0.1.9~version: no script for version, continuing
+8 info lifecycle a11y-examples@0.1.10~version: a11y-examples@0.1.10
+9 silly lifecycle a11y-examples@0.1.10~version: no script for version, continuing
 10 info git [ 'add', '/Users/zhawry/git/a11y-examples/package.json' ]
-11 info git [ 'commit', '-m', '0.1.9' ]
-12 info git [ 'tag', 'v0.1.9', '-am', '0.1.9' ]
-13 verbose stack Error: Command failed: git tag v0.1.9 -am 0.1.9
-13 verbose stack fatal: tag 'v0.1.9' already exists
+11 info git [ 'commit', '-m', '0.1.10' ]
+12 info git [ 'tag', 'v0.1.10', '-am', '0.1.10' ]
+13 verbose stack Error: Command failed: git tag v0.1.10 -am 0.1.10
+13 verbose stack fatal: tag 'v0.1.10' already exists
 13 verbose stack
 13 verbose stack     at ChildProcess.exithandler (child_process.js:202:12)
 13 verbose stack     at emitTwo (events.js:100:13)
@@ -47,12 +47,12 @@
 13 verbose stack     at Pipe._onclose (net.js:475:12)
 14 verbose cwd /Users/zhawry/git/a11y-examples
 15 error Darwin 15.5.0
-16 error argv "/Users/zhawry/.nvm/versions/node/v5.8.0/bin/node" "/Users/zhawry/.nvm/versions/node/v5.8.0/bin/npm" "version" "patch"
+16 error argv "/Users/zhawry/.nvm/versions/node/v5.8.0/bin/node" "/Users/zhawry/.nvm/versions/node/v5.8.0/bin/npm" "version" "0.1.10"
 17 error node v5.8.0
 18 error npm  v3.7.3
 19 error code 128
-20 error Command failed: git tag v0.1.9 -am 0.1.9
-20 error fatal: tag 'v0.1.9' already exists
+20 error Command failed: git tag v0.1.10 -am 0.1.10
+20 error fatal: tag 'v0.1.10' already exists
 21 error If you need help, you may report this error at:
 21 error     <https://github.com/npm/npm/issues>
 22 verbose exit [ 1, true ]
