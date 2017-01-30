@@ -1,0 +1,22 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/zhawry/.nvm/versions/node/v5.8.0/bin/node',
+1 verbose cli   '/Users/zhawry/.nvm/versions/node/v5.8.0/bin/npm',
+1 verbose cli   'version',
+1 verbose cli   'v0.1.2' ]
+2 info using npm@3.7.3
+3 info using node@v5.8.0
+4 verbose stack Error: Version not changed
+4 verbose stack     at persistVersion (/Users/zhawry/.nvm/versions/node/v5.8.0/lib/node_modules/npm/lib/version.js:91:47)
+4 verbose stack     at /Users/zhawry/.nvm/versions/node/v5.8.0/lib/node_modules/npm/lib/version.js:46:7
+4 verbose stack     at /Users/zhawry/.nvm/versions/node/v5.8.0/lib/node_modules/npm/lib/version.js:118:5
+4 verbose stack     at /Users/zhawry/.nvm/versions/node/v5.8.0/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16
+4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:404:3)
+5 verbose cwd /Users/zhawry/git/a11y-examples
+6 error Darwin 15.5.0
+7 error argv "/Users/zhawry/.nvm/versions/node/v5.8.0/bin/node" "/Users/zhawry/.nvm/versions/node/v5.8.0/bin/npm" "version" "v0.1.2"
+8 error node v5.8.0
+9 error npm  v3.7.3
+10 error Version not changed
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]
