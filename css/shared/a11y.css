@@ -1,4 +1,14 @@
-/*
+/*********************************************************
+ * a11y.css v0.1.0 - a stylesheet to help create 
+ * accessible websites.
+ * 
+ * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
+ * Licensed under the MIT License
+ * 
+ * https://opensource.org/licenses/MIT
+ ********************************************************/
+ 
+ /*
  * Class for elements that are only visible to the screen reader. From
  * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
  */

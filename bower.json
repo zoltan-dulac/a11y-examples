@@ -1,0 +1,28 @@
+{
+  "name": "a11y-examples",
+  "version": "0.1.0",
+  "homepage": "https://github.com/zoltan-dulac/a11y-examples",
+  "authors": [
+    "Zoltan Hawryluk <zoltan.dulac@gmail.com>"
+  ],
+  "description": "A repo that contains examples to help devs comply with WCAG 2.0.",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "a11y",
+    "accessibility",
+    "javascript",
+    "css",
+    "screenreader",
+    "keyboard",
+    "tabbing"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "previews",
+    "**/*.html",
+    "shared/*.css"
+  ]
+}
