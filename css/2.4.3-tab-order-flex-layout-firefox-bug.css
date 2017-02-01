@@ -93,3 +93,7 @@ div.shuffled .btn:hover,
 div.shuffled .btn:focus {
   background-color: #600;
 }
+
+.hidden {
+	display: none;
+}

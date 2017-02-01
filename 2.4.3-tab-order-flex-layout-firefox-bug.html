@@ -44,25 +44,26 @@
 					<br> This appears fourth in source order.
 				</button>
 			</div>
+			
 			<h2>Re-Ordered</h2>
-<div class="flex-example shuffled">
-	<button class="btn">
-		<strong>1</strong>
-		<br> This appears first in source order.
-	</button>
-	<button class="btn">
-		<strong>2</strong>
-		<br> This appears second in source order.
-	</button>
-	<button class="btn">
-		<strong>3</strong>
-		<br> This appears third in source order.
-	</button>
-	<button class="btn">
-		<strong>4</strong>
-		<br> This appears fourth in source order.
-	</button>
-</div>
+			<div class="flex-example shuffled">
+				<button class="btn">
+					<strong>1</strong>
+					<br> This appears first in source order.
+				</button>
+				<button class="btn">
+					<strong>2</strong>
+					<br> This appears second in source order.
+				</button>
+				<button class="btn">
+					<strong>3</strong>
+					<br> This appears third in source order.
+				</button>
+				<button class="btn">
+					<strong>4</strong>
+					<br> This appears fourth in source order.
+				</button>
+			</div>
 			
 			<h2>Re-Ordered Links</h2>
 			<div class="flex-example shuffled">
@@ -84,27 +85,65 @@
 				</a>
 			</div>
 			
-			<h2>Re-Ordered div elements with tabindex = 0</h2>
+			<h2>Re-Ordered div elements with tabindex = 0 and role="button"</h2>
 			<div class="flex-example shuffled">
-				<div tabindex="0" class="btn">
+				<div role="button" tabindex="0" class="btn">
 					<strong>1</strong>
 					<br> This appears first in source order.
 				</div>
-				<div tabindex="0" class="btn">
+				<div role="button" tabindex="0" class="btn">
 					<strong>2</strong>
 					<br> This appears second in source order.
 				</div>
-				<div tabindex="0" class="btn">
+				<div role="button" tabindex="0" class="btn">
 					<strong>3</strong>
 					<br> This appears third in source order.
 				</div>
-				<div tabindex="0" class="btn">
+				<div role="button" tabindex="0" class="btn">
 					<strong>4</strong>
 					<br> This appears fourth in source order.
 				</div>
 			</div>
 			
+			<h2>Re-Ordered with 3rd element set to <code>display: none</code></h2>
+			<div class="flex-example shuffled">
+				<button class="btn">
+					<strong>1</strong>
+					<br> This appears first in source order.
+				</button>
+				<button class="btn">
+					<strong>2</strong>
+					<br> This appears second in source order.
+				</button>
+				<button class="btn hidden">
+					<strong>3</strong>
+					<br> This appears third in source order.
+				</button>
+				<button class="btn">
+					<strong>4</strong>
+					<br> This appears fourth in source order.
+				</button>
+			</div>
 			
+			<h2>Re-Ordered with 2nd element's <code>hidden</code> attribute set</h2>
+			<div class="flex-example shuffled">
+				<button class="btn">
+					<strong>1</strong>
+					<br> This appears first in source order.
+				</button>
+				<button class="btn" hidden>
+					<strong>2</strong>
+					<br> This appears second in source order.
+				</button>
+				<button class="btn">
+					<strong>3</strong>
+					<br> This appears third in source order.
+				</button>
+				<button class="btn">
+					<strong>4</strong>
+					<br> This appears fourth in source order.
+				</button>
+			</div>
 			
 			<p>
 				This example is based on one originally used in the excellent post <a href="http://adrianroselli.com/2015/10/html-source-order-vs-css-display-order.html">HTML Source Order vs CSS Display Order</a>

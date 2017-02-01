@@ -22,9 +22,10 @@
 			userAgent = navigator.userAgent;
 			isFirefoxDesktop = userAgent.indexOf('Firefox') > -1 && userAgent.indexOf('Mobile') == -1,
 			bodyEl = document.body,
-			// We cache this lookup, since it returns a live node list and is *always*
-			// up-to-date with the document (unlike jQuery).
-			tabbableElsList = document.querySelectorAll('[tabindex="0"], a, :enabled'),
+			tabbableElsSelector = 'a[href]:not([tabindex="-1"]), ' + 
+				'area:not([tabindex="-1"]), [role="button"]:not([tabindex="-1"]), ' + 
+				'[role="link"]:not([tabindex="-1"]), iframe:not([tabindex="-1"]), ' +
+				'[contentEditable=true]:not([tabindex="-1"]), :enabled',
 			// This is the max amount a tabindex can have according to 
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
 			tabIndexMax = 32767;
@@ -33,6 +34,13 @@
 			bodyEl.addEventListener('focus', handleFirefoxFocusEvent, true);
 			bodyEl.addEventListener('blur', handleFirefoxBlurEvent, true);
 			bodyEl.addEventListener('keypress', handleFirefoxKeypressEvent, true);
+		}
+		
+		function isTabbable(el) {
+			return (
+				!el.hidden &&
+				document.defaultView.getComputedStyle(el, null).display !== 'none'
+			);
 		}
 		
 		function setTabIndex(el, val) {
@@ -65,7 +73,8 @@
 		function handleFirefoxKeypressEvent(e) {
 			if (e.key === 'Tab') {
 					
-				var lastTabbableEl = tabbableElsList[tabbableElsList.length - 1],
+				var tabbableEls = document.querySelectorAll(tabbableElsSelector),
+					lastTabbableEl = tabbableEls[tabbableEls.length - 1],
 					target = e.target;
 	
 				// if this is the last tabbable element, we want to make sure we tab
@@ -79,25 +88,40 @@
 		
 		function handleFirefoxBlurEvent(e) {
 			var target = e.target,
-				tabbableEls = [].slice.call(tabbableElsList);
+				tabbableEls = document.querySelectorAll(tabbableElsSelector);
 			
 			clearAndFindIndex(tabbableEls, target);
 		}
 		
+		function getClosestTabbable(els, index, dir) {
+			var i, r;
+			
+			for (i = index + dir, r = els[i]; r; i += dir, r = els[i]) {
+				if (isTabbable(r)) {
+					return r;
+				}
+			}
+			
+			return null;
+		}
+		
 		function handleFirefoxFocusEvent(e) {
 			var target = e.target,
-				tabbableEls = [].slice.call(tabbableElsList),
-				index = clearAndFindIndex(tabbableEls, target);
+				tabbableEls = document.querySelectorAll(tabbableElsSelector),
+				index = clearAndFindIndex(tabbableEls, target),
+				prevTabbable = getClosestTabbable(tabbableEls, index, -1),
+				nextTabbable = getClosestTabbable(tabbableEls, index, 1);
+
 				
-				if (index !== 0) {
-					setTabIndex(tabbableEls[index - 1], tabIndexMax - 2);
+				if (prevTabbable) {
+					setTabIndex(prevTabbable, tabIndexMax - 2);
 				} 
 				
-				if (index !== tabbableEls.length - 1) {
-					setTabIndex(tabbableEls[index + 1], tabIndexMax);
+				if (nextTabbable) {
+					setTabIndex(nextTabbable, tabIndexMax);
 				}
 				
-				setTabIndex(tabbableEls[index], tabIndexMax - 1);
+				setTabIndex(target, tabIndexMax - 1);
 				
 		}
 		
@@ -109,6 +133,4 @@
 	};
 	
 	fixFirefoxFlexbox.init();
-	
-	return fixFirefoxFlexbox;
 }) );
