@@ -39,7 +39,7 @@
 		function isTabbable(el) {
 			return (
 				!el.hidden &&
-				document.defaultView.getComputedStyle(el, null).display !== 'none'
+				el.offsetParent !== null
 			);
 		}
 		
