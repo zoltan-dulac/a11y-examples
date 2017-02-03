@@ -1,19 +1,62 @@
 {
-  "name": "a11y-examples",
-  "version": "0.1.14",
-  "description": "A repo that contains examples to help devs comply with WCAG 2.0.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "_args": [
+    [
+      "a11y-examples@0.1.14",
+      "/Users/zhawry/git/frontend"
+    ]
+  ],
+  "_from": "a11y-examples@0.1.14",
+  "_id": "a11y-examples@0.1.14",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/a11y-examples",
+  "_nodeVersion": "5.8.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/a11y-examples-0.1.14.tgz_1485813636618_0.42618316295556724"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zoltan-dulac/a11y-examples.git"
+  "_npmUser": {
+    "email": "zoltan.dulac@gmail.com",
+    "name": "zoltandulac"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "a11y-examples",
+    "raw": "a11y-examples@0.1.14",
+    "rawSpec": "0.1.14",
+    "scope": null,
+    "spec": "0.1.14",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_shasum": "2184349cdf16dc3c1b77bb1d0d30e8e54490a04c",
+  "_shrinkwrap": null,
+  "_spec": "a11y-examples@0.1.14",
+  "_where": "/Users/zhawry/git/frontend",
+  "author": {
+    "email": "zoltan.dulac@gmail.com",
+    "name": "Zoltan Hawryluk"
+  },
+  "bugs": {
+    "url": "https://github.com/zoltan-dulac/a11y-examples/issues"
+  },
+  "dependencies": {},
+  "description": "A repo that contains examples to help devs comply with WCAG 2.0.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "2184349cdf16dc3c1b77bb1d0d30e8e54490a04c",
+    "tarball": "https://registry.npmjs.org/a11y-examples/-/a11y-examples-0.1.14.tgz"
   },
   "files": [
     "css/shared/*.css",
     "js/*.js"
   ],
+  "gitHead": "5cfa73bbb877a3d37af937f7e2c80ebad1c6d7b1",
+  "homepage": "https://github.com/zoltan-dulac/a11y-examples#readme",
   "keywords": [
     "a11y",
     "accessibility",
@@ -23,10 +66,23 @@
     "keyboard",
     "tabbing"
   ],
-  "author": "Zoltan Hawryluk <zoltan.dulac@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zoltan-dulac/a11y-examples/issues"
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "zoltan.dulac@gmail.com",
+      "name": "zoltandulac"
+    }
+  ],
+  "name": "a11y-examples",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoltan-dulac/a11y-examples.git"
   },
-  "homepage": "https://github.com/zoltan-dulac/a11y-examples#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.14"
 }

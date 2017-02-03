@@ -1,1 +1,1 @@
-export {default} from './js/fixFirefoxFlexbox';
+var a11yExamples = require('./js/fixFirefoxFlexbox.js');
