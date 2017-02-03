@@ -1,1 +1,1 @@
-var a11yExamples = require('./js/fixFirefoxFlexbox.js');
+require('./js/fixFirefoxFlexbox.js');
