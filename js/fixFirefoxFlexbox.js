@@ -1,11 +1,17 @@
 /*********************************************************
- * fixFirefoxFlexbox.js v0.1.18- a library fix Firefox's
+ * fixFirefoxFlexbox.js v0.1.18 - a library fix Firefox's
  * keyboard tabbing of flexbox CSS `order` elements.
  * 
  * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
- * Licensed under the MIT License
  * 
- * https://opensource.org/licenses/MIT
+ * Latest version available at:
+ * - https://github.com/zoltan-dulac/a11y-examples
+ * 
+ * More info at:
+ * - http://useragentman.com/blog/Tf4TQ
+ * 
+ * Licensed under the MIT License
+ * - https://opensource.org/licenses/MIT
  ********************************************************/
 
 (function (root, factory) {
