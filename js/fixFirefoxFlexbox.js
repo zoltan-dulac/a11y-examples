@@ -1,5 +1,5 @@
 /*********************************************************
- * fixFirefoxFlexbox.js v0.1.15 - a library fix Firefox's
+ * fixFirefoxFlexbox.js v0.1.17- a library fix Firefox's
  * keyboard tabbing of flexbox CSS `order` elements.
  * 
  * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
