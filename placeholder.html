@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>#TITLE#</title>
-		<meta name="description" content="#DESC#">
+		<title>Accessible Placeholder Text Example</title>
+		<meta name="description" content="This is an example of a page that works around Voiceover from OSX reading placeholder text as if it was the value of the form field.">
 		<meta name="author" content="Zoltan Hawryluk">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -15,17 +15,21 @@
 
 		<link rel="stylesheet" href="css/shared/a11y.css" />
 
-		<meta property="og:title" content="#TITLE#" />
-		<meta property="og:description" content="#DESC#" />
+		<meta property="og:title" content="Accessible Placeholder Text Example" />
+		<meta property="og:description" content="This is an example of a page that works around Voiceover from OSX reading placeholder text as if it was the value of the form field." />
 		<meta property="og:image" content="social/placeholder.jpg" />
 
 		<meta name="twitter:card" content="photo">
-		<meta name="twitter:title" content="#DESC#" />
+		<meta name="twitter:title" content="This is an example of a page that works around Voiceover from OSX reading placeholder text as if it was the value of the form field." />
 		<meta name="twitter:image" content="social/placeholder.jpg">
 
 	</head>
 
-	<body>
+	<body class="a11y-fix-placeholder">
+		<p>
+			This is a form that has accessible placeholder text.  When you "tab in",
+			the placeholder disappears. This fixes the issue that has 
+		</p>
 		<form>
 			<fieldset>
 				<legend>Search The Site</legend>
@@ -33,8 +37,19 @@
 				<input id="searchtext" type="text" name="s" placeholder="e.g. contact info" value="" maxlength="200" />
 				<input type="submit" value="submit" />
 			</fieldset>
+			
 		</form>
 		
-		<script src="js/placeholder.js"></script>
+		<form>
+			
+			<fieldset>
+				<legend>Submit a comment</legend>
+			
+				<label for="comment">Comment: </label>
+				<textarea id="comment" name="comment" placeholder="Ask and ye shall receive!"></textarea>
+			</fieldset>
+		</form>
+		
+		<script src="js/a11yPlaceholders.js"></script>
 	</body>
 </html>
