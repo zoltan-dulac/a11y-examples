@@ -35,7 +35,7 @@
 			</a>
 		</p>	
 		
-		<form>
+		<form oninput="document.getElementById('range-output').innerHTML = document.getElementById('range').value;">
 			<fieldset>
 				<legend>Search this site!</legend>
 					<label for="search-input">Search for:</label>
@@ -46,6 +46,102 @@
 						<option>on just the comments</option>
 					</select>
 					<input type="submit" value="Search" />
+			</fieldset>
+			
+			<fieldset>
+				<legend>Other tabbable items</legend>
+				<p>Here is a place to test all the tabbable items</p>
+				
+				<div><label for="input">Text input:</label><input type="text" id="input" /></div>
+				<div><label for="select">Select box:</label>
+					<div class="focusable-element-container">
+						<select id="select">
+							<option>Pick one</option>
+							<option value="1">option 1</option>
+							<option value="2">option 2</option>
+						</select>
+					</div>
+					</div>
+				<div>
+					<div class="focusable-element-container">
+					<label for="radio1">Yes:</label>
+						<input type="radio" id="radio1" id="3" name="radio-example"/>
+						
+						<label for="radio2">No:</label>
+						<input type="radio" id="radio2" id="3" name="radio-example" />
+					</div>
+				</div>
+				<div>
+					<div class="focusable-element-container">
+						<label for="checkbox1">Vegetables:</label>
+						<input type="checkbox" id="checkbox1" name="checkbox-example"/>
+						
+						<label for="checkbox2">Meat:</label>
+						<input type="checkbox" id="checkbox2" name="checkbox-example" />
+					</div>
+				</div>
+				<div>
+					
+					<label for="range">Range slider</label>
+					
+					<div class="focusable-element-container">
+						<input type="range" id="range" min="0" max="10"/>
+						<output id="range-output"></output>
+					</div>
+				</div>
+				<div>
+					<label>Content editable element:</label>
+					
+					<div class="focusable-element-container">
+						<div contentEditable="true">
+							<p>The Migration or Importation of such
+							Persons as any of the States now existing shall think proper to
+							admit, shall not be prohibited by the Congress prior to the Year
+							one thousand eight hundred and eight, but a tax or duty may be
+							imposed on such Importation, not exceeding ten dollars for each
+							Person.</p>
+							
+							<p>The privilege of the Writ of Habeas Corpus shall not be suspended,
+							unless when in Cases of Rebellion or Invasion the public Safety
+							may require it.</p>
+							
+							<p>No Bill of Attainder or ex post facto Law shall be passed.</p>
+							
+							<p><em>(No capitation, or other direct, Tax
+							shall be laid, unless in Proportion to the Census or Enumeration herein before directed to
+							be taken.)</em> <strong>(Section in parentheses clarified by the
+							16th Amendment.)</strong></p>
+							
+							<p>No Tax or Duty shall be laid on
+							Articles exported from any State.</p>
+							
+							<p>No Preference shall be given by any
+							Regulation of Commerce or Revenue to the Ports of one State over
+							those of another: nor shall Vessels bound to, or from, one State,
+							be obliged to enter, clear, or pay Duties in
+							another.</p>
+							
+							<p>No Money shall be drawn from the
+							Treasury, but in Consequence of Appropriations made by Law; and a
+							regular Statement and Account of the Receipts and Expenditures of
+							all public Money shall be published from time to time.</p>
+							
+							<p>No Title of Nobility shall be granted by
+							the United States: And no Person holding any Office of Profit or
+							Trust under them, shall, without the Consent of the Congress,
+							accept of any present, Emolument, Office, or Title, of any
+							kind whatever, from any King, Prince or foreign State.</p>
+						</div>
+					</div>
+				</div>
+				<div><label for="6">Iframe</label>
+					
+					<div class="focusable-element-container">
+						<iframe id="iframe" src="https://en.wikipedia.org/wiki/Bowling_Green_Massacre">
+							<a href="https://en.wikipedia.org/wiki/Bowling_Green_Massacre">We have always been at war with Eastasia.</a>
+						</iframe>
+					</div>
+				</div>
 			</fieldset>
 		</form>
 
