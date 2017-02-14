@@ -46,19 +46,29 @@ var a11yPlaceholders = new function () {
 		}
 	}
 	
+	function replacePlaceholder(el) {
+		el.placeholder = el.dataset.a11yPlaceholder;
+		el.dataset.a11yPlaceholder = '';
+	}
+	
 	function handleInputBlurEvent(e) {
 		var target = e.target;
-		
+		console.log('blur ' + target.nodeName)
 		if (isPlaceholderElement(target) && target.dataset.a11yPlaceholder) {
-			/*
-			 * The timeout is to prevent Chrome with NVDA reading out placeholder
-			 * text as tabbing out.s
-			 */
-			setTimeout(function () {
-				target.placeholder = target.dataset.a11yPlaceholder;
-				target.dataset.a11yPlaceholder = '';
-			}, 1);
 			
+			switch(target.nodeName) {
+				case "TEXTAREA":
+					replacePlaceholder(target);
+					break;
+				case "INPUT":
+					/*
+					 * The timeout is to prevent Chrome with NVDA reading out placeholder
+					 * text as tabbing out.
+					 */
+					setTimeout(function() {
+						replacePlaceholder(target);
+					}, 1);
+			}
 		}
 	}
 }
