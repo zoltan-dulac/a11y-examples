@@ -71,7 +71,7 @@ then
 	git push origin v$TAG
 	echo "Updating npm"
 	npm version $TAG
-	npm version patch
+	# npm version patch
 else 
 	for i in $FILELIST
 	do
