@@ -110,3 +110,7 @@ iframe:not([tabindex="-1"]):focus:active,
 	outline: solid 2px orange ;
 }
 
+.placeholder-removed {
+	opacity: 0.999;
+}
+
