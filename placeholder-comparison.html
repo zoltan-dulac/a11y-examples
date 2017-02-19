@@ -27,36 +27,37 @@
 	</head>
 
 	<body >
+	<div id="exampleBlurb">
+		<p>
+			This is a form illustrates the problem with placeholder text using 
+			certain screen reader/browser pairs.  If you tab into each of these
+			inputs with NVDA/Edge or Voiceover/Safari, you'll experience why 
+			some users would mistake the placeholder for the form field's value.
+			
+			<a href="http://www.useragentman.com/blog/?p=7513">Back to User Agent Man HTML5 Forms article </a>
+		</p>
+	</div>
+			
 		<main>
-			<p>
-				This is a form that has accessible placeholder text.  When you "tab in",
-				the placeholder disappears. This fixes the issue that has 
-			</p>
+
 			<form>
 				<fieldset>
 					<legend>Personal Information</legend>
 					
-					<div>
+					<div class="input-container">
 						<label for="email-address">Email Address: </label>
-						<input id="email-address" type="email" name="email" placeholder="e.g. example@ix.netcom.com" value="" maxlength="254" />
+						<input id="email-address" type="email" name="email" placeholder="example@netcom.com" value="" maxlength="254" />
+						<div class="field-help" id="email-address-fieldhelp">This field has a <em>placeholder</em> of <strong>example@netcom.com</strong></div>
 					</div>
 					
-					<div>
-						<label for="phone-number">Phone Number: </label>
-						<input id="phone-number" type="tel" name="email" placeholder="e.g. +1-416-555-1212" value="" maxlength="15" />
+					<div class="input-container">
+						<label for="email-address2">Email Address: </label>
+						<input id="email-address2" type="email" name="email" value="example@netcom.com" maxlength="254" />
+						<div class="field-help" id="email-address2-fieldhelp">This field has a <em>value</em> of <strong>example@netcom.com</strong></div>
 					</div>
 				</fieldset>
 				
-			</form>
-			
-			<form>
-				
-				<fieldset>
-					<legend>Extra Information</legend>
-				
-					<label for="comment">Comment: </label>
-					<textarea id="comment" name="comment" placeholder="What can we do to help you?"></textarea>
-				</fieldset>
+				<input type="submit" value="submit" />
 			</form>
 		</main>
 		

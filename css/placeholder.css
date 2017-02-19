@@ -1,0 +1,43 @@
+@import url("http://www.useragentman.com/shared/css/useragentmanExample.css");
+
+body {
+	font-family: "Helvetica", "Arial", sans-serif;
+	line-height: 1.5;
+}
+
+main {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+label {
+	display: inline-block;
+	width: 25%;
+	text-align: right;
+	font-weight: bold;
+	padding: 0 1em 0 0;
+	vertical-align: top;	
+}
+
+input,
+textarea,
+select {
+	width: 60%;
+	padding: 0.3em;
+}
+
+.input-container,
+fieldset {
+	margin: 0 0 1em 0;
+}
+
+input[type="submit"] {
+	display: block;
+	width: auto;
+	margin: 0 auto;
+}
+
+.field-help {
+	margin-left: calc(25% + 1.2em);
+	font-size: 0.9em;
+}
