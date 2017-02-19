@@ -8,10 +8,9 @@
  * - NVDA/Edge
  * 
  * The fix basically just removes the placeholder text onfocus, and puts it back
- * onblur
- * 
- * This mimics the default behaviour of IE <= 11 (which seems
- * to be doing something right,	for once) but not Edge.
+ * onblur (which, interestingly, is the default behaviour of IE <= 11).  
+ * You should, then, *never* put anything that should be read by the screen
+ * reader in the placeholder attribute.
  * 
  * by Zoltan Hawryluk (zoltan.dulac@gmail.com)
  * 
@@ -43,32 +42,29 @@ var a11yPlaceholders = new function () {
 		if (isPlaceholderElement(target) && target.placeholder) {
 			target.dataset.a11yPlaceholder = target.placeholder;
 			target.placeholder = '';
+			// Safari needs to force a repaint (happens with textareas, but 
+			// do it for all placeholder element, just in case).
+			target.classList.add('placeholder-removed');
 		}
-	}
-	
-	function replacePlaceholder(el) {
-		el.placeholder = el.dataset.a11yPlaceholder;
-		el.dataset.a11yPlaceholder = '';
 	}
 	
 	function handleInputBlurEvent(e) {
 		var target = e.target;
-		console.log('blur ' + target.nodeName)
 		if (isPlaceholderElement(target) && target.dataset.a11yPlaceholder) {
 			
-			switch(target.nodeName) {
-				case "TEXTAREA":
-					replacePlaceholder(target);
-					break;
-				case "INPUT":
-					/*
-					 * The timeout is to prevent Chrome with NVDA reading out placeholder
-					 * text as tabbing out.
-					 */
-					setTimeout(function() {
-						replacePlaceholder(target);
-					}, 1);
-			}
+			/*
+			 * The timeout is to prevent Chrome with NVDA reading out placeholder
+			 * text as tabbing out.
+			 */
+			setTimeout(function () {
+				target.placeholder = target.dataset.a11yPlaceholder;
+				target.dataset.a11yPlaceholder = '';
+				
+				// Safari needs to force a repaint (happens with textareas, but 
+				// do it for all placeholder element, just in case).
+				target.classList.remove('placeholder-removed');
+			}, 1);
+			
 		}
 	}
 }

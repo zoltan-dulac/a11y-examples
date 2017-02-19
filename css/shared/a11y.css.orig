@@ -110,17 +110,13 @@ iframe:not([tabindex="-1"]):focus:active,
 	outline: solid 2px orange ;
 }
 
+<<<<<<< HEAD
 /*
  * Placeholder text should mmet WCAG requirement 1.4.3: Contrast (Minimum) 
  * Level AA
  * 
  * From https://www.w3.org/WAI/tutorials/forms/instructions/
  */
-
-.placeholder-removed {
-	opacity: 0.999;
-}
-
 [placeholder] {	
 	background-color: #fff;
 	border: solid 1px #777;
@@ -145,3 +141,9 @@ iframe:not([tabindex="-1"]):focus:active,
 	 color: #777;
 	 opacity: 1;
 }
+=======
+.placeholder-removed {
+	opacity: 0.999;
+}
+
+>>>>>>> 4db0c0e4dbe449efb2c283a28e1e6b30fe85e3ec
