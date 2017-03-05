@@ -46,14 +46,18 @@ var a11yFormHelpers = new function () {
 	}
 	
 	function submitEvent ( event ) {
-		if ( !this.checkValidity() ) {
+		var target = event.target;
+		if ( target.classList.contains('suppress-bubbles') && !this.checkValidity() ) {
 			event.preventDefault();
 		}
 	}
 	
 	function formButtonClickEvent ( event ) {
 		var target = event.target,
-			invalidFields;
+			form = target.form,	
+			invalidFields,
+			doSuppressBubbles = form.classList.contains('suppress-bubbles'),
+			errorClasses = !doSuppressBubbles ? 'visually-hidden' : '';
 		
 		if 
 		(
@@ -61,8 +65,7 @@ var a11yFormHelpers = new function () {
 			(target.nodeName === 'INPUT' && target.type === 'submit')
 		) {
 			
-			var form = target.form,
-				errorMessages = form.querySelectorAll( ".error-message" ),
+			var errorMessages = form.querySelectorAll( ".error-message" ),
 				parent;
 	
 			invalidFields = form.querySelectorAll( ":invalid:not(fieldset)" );
@@ -76,7 +79,8 @@ var a11yFormHelpers = new function () {
 				var errorID = field.name + '-error';
 				parent = field.parentNode;
 				parent.insertAdjacentHTML( "beforeend",
-				'<div id="' + errorID + '" class="error-message">' + 
+				'<div id="' + errorID + '" class="error-message ' +
+					errorClasses + '">' + 
 					field.validationMessage +
 					'</div>' );
 				field.setAttribute('aria-describedby', errorID);
@@ -89,6 +93,14 @@ var a11yFormHelpers = new function () {
 		}
 	}
 	
+	function invalidEvent ( event ) {
+		var target = event.target,
+			form = target.form;
+		if ( form.classList.contains('suppress-bubbles') && !target.validity.valid ) {
+			event.preventDefault();
+		}
+	}
+	
 	function replaceValidationUI() {
 		dummyFocusEl = document.createElement('div');
 		dummyFocusEl.tabIndex ='-1';
@@ -97,9 +109,7 @@ var a11yFormHelpers = new function () {
 		document.body.appendChild(dummyFocusEl);
 		
 		// Suppress the default bubbles
-		document.addEventListener( "invalid", function( event ) {
-			event.preventDefault();
-		}, true );
+		document.addEventListener( "invalid", invalidEvent, true );
 		
 		document.addEventListener( 'input', inputChangeEvent, true);
 	
