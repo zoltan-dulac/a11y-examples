@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Example of WCAG 2.4.7 — Focus Visible</title>
+		<meta name="description" content="An example of how to ensure all your focusable elements have a CSS focus state without impacting mouse users.">
+		<meta name="author" content="zoltan">
+
+		<meta property="og:title" content="Example of WCAG 2.4.7 — Focus Visible" />
+		<meta property="og:description" content="An example of how to ensure all your focusable elements have a CSS focus state without impacting mouse users." />
+		<meta property="og:image" content="previews/2.4.7-focus-visible.jpg" />
+
+		<meta name="twitter:card" content="photo">
+		<meta name="twitter:title" content="Example of WCAG 2.4.7 — Focus Visible">
+		<meta name="twitter:image" content="previews/2.4.7-focus-visible.jpg">
+		<meta name="author" content="Zoltan Hawryluk">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/2.4.7-focus-visible.css" type="text/css" />
+
+	</head>
+
+	<body>
+		<p>
+			This is an example of page that conforms to 
+			<a href="https://www.wuhcag.com/focus-visible">WCAG guideline 2.4.7 
+			&mdash; Focus Visible</a>.  If you a keyboard to navigate through the page
+			using the tab key, you will notice that all the elements have an orange
+			outline when they have focus.  It shouldn't affect 
+			elements that have a tab index of -1</a> but should affect 
+			<a href="#" tabindex="20">elements that have non-zero tabindexes</a>.
+				
+			</a>
+		</p>	
+		
+		<form >
+			<fieldset>
+				<legend>Personal Information</legend>
+					
+				<div>
+					<label for="name">Full Name:</label>
+					<input type="text" id="name" name="name" required />
+				</div>
+				<div>
+					<label for="age">Age:</label>
+					<input type="number" id="age" name="age" required min="18" max="125"/>
+				</div>
+				
+				<div>
+					<label for="address">Full Address:</label>
+					<input type="text" id="address" name="address" required />
+				</div>
+				
+				<div>
+					<label for="province">Province:</label>
+					<div class="focusable-element-container">
+						<select id="province" name="province">
+							<option>Pick one</option>
+							<option value="AB">Alberta </option>
+							<option value="BC">British Columbia </option>
+							<option value="MB">Manitoba </option>
+							<option value="NB">New Brunswick </option>
+							<option value="NL">Newfoundland and Labrador </option>
+							<option value="NT">Northwest Territories </option>
+							<option value="NS">Nova Scotia </option>
+							<option value="NU">Nunavut </option>
+							<option value="ON">Ontario </option>
+							<option value="PE">Prince Edward Island </option>
+							<option value="QC">Quebec </option>
+							<option value="SK">Saskatchewan </option>
+							<option value="YT">Yukon </option>
+						</select>
+					</div>
+					</div>
+				<div>
+					<div class="focusable-element-container">
+					<label for="radio1">Yes:</label>
+						<input type="radio" id="radio1" name="radio-example"/>
+						
+						<label for="radio2">No:</label>
+						<input type="radio" id="radio2" name="radio-example" />
+					</div>
+				</div>
+				<div>
+					<div class="focusable-element-container">
+						<label for="checkbox1">Vegetables:</label>
+						<input type="checkbox" id="checkbox1" name="checkbox-example"/>
+						
+						<label for="checkbox2">Meat:</label>
+						<input type="checkbox" id="checkbox2" name="checkbox-example" />
+					</div>
+				</div>
+				<div>
+					
+					<label for="range">Range slider</label>
+					
+					<div class="focusable-element-container">
+						<input type="range" id="range" name="range" min="0" max="10"/>
+						<output id="range-output"></output>
+					</div>
+				</div>
+				
+			</fieldset>
+			<input type="submit" value="submit" />
+		</form>
+
+		<script src="js/a11yFormHelpers.js"></script>
+	</body>
+</html>

@@ -68,46 +68,19 @@
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target,
-a[href]:not([tabindex="-1"]):focus,
-area:not([tabindex="-1"]):focus,
-[role="button"]:not([tabindex="-1"]):focus,
-[role="link"]:not([tabindex="-1"]):focus,
-iframe:not([tabindex="-1"]):focus,
-[contentEditable=true]:not([tabindex="-1"]):focus,
-:enabled:not([tabindex="-1"]):focus,
-[tabindex]:not([tabindex="-1"]):focus {
+*:focus {
 	/* You can replace this with whatever style you want for focus state */
 	outline: solid 2px rgba(255, 165, 0, 1);
 }
 
 /*
+ * Matches all elements that are hovered and focused at the same time.
+ * 
  * The above selector will match focusable elements when they are clicked
  * with a mouse.  If you don't want that to happen, use this rule. 
  */
-a[href]:not([tabindex="-1"]):hover:focus,
-area:not([tabindex="-1"]):hover:focus,
-[role="button"]:not([tabindex="-1"]):hover:focus,
-[role="link"]:not([tabindex="-1"]):hover:focus,
-iframe:not([tabindex="-1"]):hover:focus,
-[contentEditable=true]:not([tabindex="-1"]):hover:focus,
-:enabled:not([tabindex="-1"]):hover:focus,
-[tabindex]:not([tabindex="-1"]):hover:focus {
-	outline: solid 2px rgba(255, 165, 0, 0.5);
-}
-
-a[href]:not([tabindex="-1"]):focus:active,
-area:not([tabindex="-1"]):focus:active,
-[role="button"]:not([tabindex="-1"]):focus:active,
-[role="link"]:not([tabindex="-1"]):focus:active,
-iframe:not([tabindex="-1"]):focus:active,
-[contentEditable=true]:not([tabindex="-1"]):focus:active,
-:enabled:not([tabindex="-1"]):focus:active,
-[tabindex]:not([tabindex="-1"]):focus:active {
+*:hover:focus {
 	outline: none;
-}
-
-*:focus {
-	outline: solid 2px orange ;
 }
 
 /*
