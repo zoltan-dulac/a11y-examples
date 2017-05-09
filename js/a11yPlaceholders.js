@@ -1,5 +1,5 @@
 /*********************************************************
- * a11yPlaceholders.js v0.1.19 - a library to fix some screenreaders
+ * a11yPlaceholders.js - a library to fix some screenreaders
  * reading placeholder text as if it was the form field's
  * value.  This is an issue with (but not necessarily only with) the following
  * browser/screenreader pairs:
