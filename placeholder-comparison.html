@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Accessible Placeholder Text Example</title>
+		<meta name="description" content="This is an example of a page that works around Voiceover from OSX reading placeholder text as if it was the value of the form field.">
+		<meta name="author" content="Zoltan Hawryluk">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="css/shared/a11y.css" />
+		<link rel="stylesheet" href="css/placeholder.css" />
+
+		<meta property="og:title" content="Accessible Placeholder Text Example" />
+		<meta property="og:description" content="This is an example of a page that works around Voiceover from OSX reading placeholder text as if it was the value of the form field." />
+		<meta property="og:image" content="http://www.useragentman.com/blog/wp-content/uploads/2017/02/social-teaser.jpg" />
+
+		<meta name="twitter:card" content="photo">
+		<meta name="twitter:title" content="This is an example of a page that works around Voiceover from OSX reading placeholder text as if it was the value of the form field." />
+		<meta name="twitter:image" content="http://www.useragentman.com/blog/wp-content/uploads/2017/02/social-teaser.jpg">
+
+	</head>
+
+	<body class="standalone-example  a11y-fix-placeholder">
+	<div id="exampleBlurb">
+		<p>
+			This is a form that has accessible placeholder text.  When you "tab in",
+			the placeholder disappears. This fixes the issue that some
+			screenreader/browser combinations have (e.g. NVDA/Edge, 
+			Voiceover/Safari) with placeholder text being mistaken for form input
+			values.
+			<a href="http://www.useragentman.com/blog/?p=7513">
+				Back to User Agent Man Article, <em>
+				"Accessible Form Placeholder Text"</em>.
+			</a>
+		</p>
+	</div>
+			
+		<main class="placeholder-example">
+			<form>
+				<fieldset>
+					<legend>Personal Information</legend>
+					
+					<div class="input-container">
+						<label for="email-address">Email Address: </label>
+						<input id="email-address" type="email" name="email" placeholder="example@netcom.com" value="" maxlength="254" />
+						<div class="field-help" id="email-address-fieldhelp">This field has a <em>placeholder</em> of <strong>example@netcom.com</strong></div>
+					</div>
+					
+					<div class="input-container">
+						<label for="email-address2">Email Address: </label>
+						<input id="email-address2" type="email" name="email" value="example@netcom.com" maxlength="254" />
+						<div class="field-help" id="email-address2-fieldhelp">This field has a <em>value</em> of <strong>example@netcom.com</strong></div>
+					</div>
+				</fieldset>
+				
+				<input type="submit" value="submit" />
+			</form>
+		</main>
+		
+		<script src="js/a11yPlaceholders.js"></script>
+	</body>
+</html>

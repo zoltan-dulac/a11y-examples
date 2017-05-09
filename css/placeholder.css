@@ -1,0 +1,48 @@
+@import url("http://www.useragentman.com/shared/css/useragentmanExample.css");
+
+.standalone-example {
+	font-family: "Helvetica", "Arial", sans-serif;
+	line-height: 1.5;
+}
+
+.placeholder-example {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.placeholder-example fieldset {
+	border: solid 1px #777;
+	padding: 1em;
+}
+
+.placeholder-example label {
+	display: inline-block;
+	width: 25%;
+	text-align: right;
+	font-weight: bold;
+	padding: 0 1em 0 0;
+	vertical-align: top;	
+}
+
+.placeholder-example input,
+.placeholder-example textarea,
+.placeholder-example select {
+	width: 60%;
+	padding: 0.3em;
+}
+
+.placeholder-example .input-container,
+.placeholder-example fieldset {
+	margin: 0 0 1em 0;
+}
+
+.placeholder-example input[type="submit"] {
+	display: block;
+	width: auto;
+	margin: 0 auto;
+}
+
+.placeholder-example .field-help {
+	margin-left: calc(25% + 1.2em);
+	font-size: 0.9em;
+}

@@ -69,10 +69,14 @@ then
 	echo "Pushing tag v$TAG"
 	git tag v$TAG
 	git push origin v$TAG
-	echo "Updating npm"
+<<<<<<< HEAD
+	echo "Updating npm version to $TAG"
 	npm version $TAG
-	npm publish
-
+=======
+	echo "Updating npm"
+	#npm version $TAG
+	# npm publish
+>>>>>>> 616d331e778e9524ec1dcee142a93e4de6be3370
 	# npm version patch
 else 
 	for i in $FILELIST

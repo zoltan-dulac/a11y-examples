@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Inaccessible Placeholder Text Example</title>
+		<meta name="description" content="This is an example of a page with inaccessible placeholder text around.">
+		<meta name="author" content="Zoltan Hawryluk">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="css/shared/a11y.css" />
+		<link rel="stylesheet" href="css/placeholder.css" />
+
+		<meta property="og:title" content="Accessible Placeholder Text Example" />
+		<meta property="og:description" content="This is an example of a page with inaccessible placeholder text around." />
+		<meta property="og:image" content="http://www.useragentman.com/blog/wp-content/uploads/2017/02/social-teaser.jpg" />
+
+		<meta name="twitter:card" content="photo">
+		<meta name="twitter:title" content="This is an example of a page with inaccessible placeholder text around." />
+		<meta name="twitter:image" content="http://www.useragentman.com/blog/wp-content/uploads/2017/02/social-teaser.jpg">
+
+	</head>
+
+	<body class="standalone-example">
+		<div id="exampleBlurb">
+			<p>
+				This is a form that placeholder text.  When you "tab in",
+				some screenreader/browser combinations (e.g. NVDA/Edge, 
+				Voiceover/Safari) read the placeholder text as if it were the form 
+				element field's input value.
+				<a href="http://www.useragentman.com/blog/?p=7513">
+					Back to User Agent Man Article, <em>
+					"Accessible Form Placeholder Text"</em>.
+				</a>
+			</p>
+		</div>
+		<main class="placeholder-example">
+			
+			<form>
+				<fieldset>
+					<legend>Personal Information</legend>
+					
+					<div class="input-container">
+						<label for="email-address">Email Address: </label>
+						<input id="email-address" type="email" name="email" placeholder="e.g. example@ix.netcom.com" value="" maxlength="254" />
+					</div>
+					
+					<div class="input-container">
+						<label for="phone-number">Phone Number: </label>
+						<input id="phone-number" type="tel" name="email" placeholder="e.g. +1-416-555-1212" value="" maxlength="15" />
+					</div>
+				</fieldset>
+				
+			</form>
+			
+			<form>
+				
+				<fieldset>
+					<legend>Extra Information</legend>
+				
+					<label for="comment">Comment: </label>
+					<textarea id="comment" name="comment" placeholder="What can we do to help you?"></textarea>
+				</fieldset>
+			</form>
+		</main>
+	</body>
+</html>
