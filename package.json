@@ -5,15 +5,15 @@
       "/Users/zhawry/git/frontend"
     ]
   ],
-  "_from": "a11y-examples@0.1.18",
-  "_id": "a11y-examples@0.1.18",
+  "_from": "a11y-examples@0.1.19",
+  "_id": "a11y-examples@0.1.19",
   "_inCache": true,
   "_installable": true,
   "_location": "/a11y-examples",
   "_nodeVersion": "5.8.0",
   "_npmOperationalInternal": {
     "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/a11y-examples-0.1.18.tgz_1485813636618_0.42618316295556724"
+    "tmp": "tmp/a11y-examples-0.1.19.tgz_1485813636618_0.42618316295556724"
   },
   "_npmUser": {
     "email": "zoltan.dulac@gmail.com",
@@ -23,10 +23,10 @@
   "_phantomChildren": {},
   "_requested": {
     "name": "a11y-examples",
-    "raw": "a11y-examples@0.1.18",
-    "rawSpec": "0.1.18",
+    "raw": "a11y-examples@0.1.19",
+    "rawSpec": "0.1.19",
     "scope": null,
-    "spec": "0.1.18",
+    "spec": "0.1.19",
     "type": "version"
   },
   "_requiredBy": [
@@ -34,7 +34,7 @@
   ],
   "_shasum": "2184349cdf16dc3c1b77bb1d0d30e8e54490a04c",
   "_shrinkwrap": null,
-  "_spec": "a11y-examples@0.1.18",
+  "_spec": "a11y-examples@0.1.19",
   "_where": "/Users/zhawry/git/frontend",
   "author": {
     "email": "zoltan.dulac@gmail.com",
@@ -49,7 +49,7 @@
   "directories": {},
   "dist": {
     "shasum": "2184349cdf16dc3c1b77bb1d0d30e8e54490a04c",
-    "tarball": "https://registry.npmjs.org/a11y-examples/-/a11y-examples-0.1.18.tgz"
+    "tarball": "https://registry.npmjs.org/a11y-examples/-/a11y-examples-0.1.19.tgz"
   },
   "files": [
     "css/shared/*.css",
