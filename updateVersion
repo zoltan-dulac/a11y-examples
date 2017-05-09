@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#######################################
-# Updates bower version automatically
-#######################################
+##############################################
+# Updates bower and npm versions automatically
+##############################################
 
 FILELIST="bower.json js/*.js css/shared/a11y.css"
 
@@ -66,10 +66,10 @@ then
 	
 	echo "Pushing to master"
 	pushCurrentBranch
-	echo "Pushing tag"
+	echo "Pushing tag v$TAG"
 	git tag v$TAG
 	git push origin v$TAG
-	echo "Updating npm"
+	echo "Updating npm version to $TAG"
 	npm version $TAG
 	# npm version patch
 else 

@@ -25,7 +25,7 @@
 }(this, function(a11yExamples) {
 	var fixFirefoxFlexbox = new function () {
 		var me = this,
-			userAgent = navigator.userAgent;
+			userAgent = navigator.userAgent,
 			isFirefoxDesktop = userAgent.indexOf('Firefox') > -1 && userAgent.indexOf('Mobile') == -1,
 			bodyEl = document.body,
 
@@ -39,7 +39,10 @@
 				'area:not([tabindex="-1"]), [role="button"]:not([tabindex="-1"]), ' +
 				'[role="link"]:not([tabindex="-1"]), iframe:not([tabindex="-1"]), ' +
 				'[contentEditable=true]:not([tabindex="-1"]), '+
-				':enabled:not([tabindex="-1"])',
+				':enabled:not([tabindex="-1"]):not([type="radio"]):not(fieldset), ' +
+				'input[type="radio"]:checked',
+			
+			tabFixClass = 'fixFirefoxFlexbox__tabFix',
 
 			// This is the max amount a tabindex can have according to
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
@@ -61,6 +64,7 @@
 		function setTabIndex(el, val) {
 			el.dataset.fixFirefoxFlexboxOrigTabIndex = el.tabIndex;
 			el.tabIndex = val;
+			el.classList.add(tabFixClass);
 		}
 
 		function unsetTabIndex(el) {
@@ -69,18 +73,28 @@
 			if (defaultTabIndex !== undefined) {
 				el.tabIndex = defaultTabIndex;
 			}
+			el.classList.remove(tabFixClass);
 		}
 
 		function clearAndFindIndex(tabbableEls, target) {
-			var i, index;
-			for (i = 0; i < tabbableEls.length; i++) {
-				var el = tabbableEls[i];
+			var i,
+				index = -1,
+				el,
+				tabFixEls = document.getElementsByClassName(tabFixClass);
 
-				unsetTabIndex(el);
+			for (i=0; i < tabbableEls.length; i++) {
+				el = tabbableEls[i];
+				
 				if (el === target) {
 					index = i;
 				}
 			}
+
+			for (i = tabFixEls.length; i > 0 ; i--) {
+				el = tabFixEls[i];
+				unsetTabIndex(el);
+			}
+			
 
 			return index;
 		}
