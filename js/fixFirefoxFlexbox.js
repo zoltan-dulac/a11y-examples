@@ -46,7 +46,9 @@
 
 			// This is the max amount a tabindex can have according to
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
-			tabIndexMax = 32767;
+			tabIndexMax = 32767,
+			observer = null,
+			mutationConfig = { childList: true, subtree: true };
 
 		function fixFirefoxFlexbox() {
 			bodyEl.addEventListener('focus', handleFirefoxFocusEvent, true);
@@ -60,13 +62,40 @@
 				el.offsetParent !== null
 			);
 		}
-
+		
+		function mutationObserver(mutations) {
+			var doApplyFix = false,
+				affectedNodes = [],
+				node,
+				i,
+				focusedNode,
+				mutation;
+			
+			for (var i=0; i<mutations.length; i++) {
+				mutation = mutations[i];
+				affectedNodes = affectedNodes.concat(Array.prototype.slice.call(mutation.addedNodes));
+				affectedNodes = affectedNodes.concat(Array.prototype.slice.call(mutation.removedNodes));
+			};
+			
+			for (i=0; i<affectedNodes.length; i++) {
+				node = affectedNodes[i];
+				
+				// If this is an DOM node and contains a tabbable element, then we have to 
+				// reset focus
+				if (node.nodeType === 1 && node.querySelector(tabbableElsSelector) !== null) {
+					setFocusOnElement(document.activeElement);
+					return;
+				}
+			}
+		}
+		
 		function setTabIndex(el, val) {
 			el.dataset.fixFirefoxFlexboxOrigTabIndex = el.tabIndex;
 			el.tabIndex = val;
 			el.classList.add(tabFixClass);
+			
 		}
-
+		
 		function unsetTabIndex(el) {
 			var defaultTabIndex = el.dataset.fixFirefoxFlexboxOrigTabIndex;
 
@@ -77,34 +106,29 @@
 		}
 
 		function clearAndFindIndex(tabbableEls, target) {
-			var i,
-				index = -1,
-				el,
-				tabFixEls = document.getElementsByClassName(tabFixClass);
+			var i, index;
+			for (i = 0; i < tabbableEls.length; i++) {
+				var el = tabbableEls[i];
 
-			for (i=0; i < tabbableEls.length; i++) {
-				el = tabbableEls[i];
-				
+				unsetTabIndex(el);
 				if (el === target) {
 					index = i;
 				}
 			}
 
-			for (i = tabFixEls.length; i > 0 ; i--) {
-				el = tabFixEls[i];
-				unsetTabIndex(el);
-			}
-			
-
 			return index;
 		}
 
 		function handleFirefoxKeypressEvent(e) {
-			if (e.key === 'Tab') {
+			var isArrowKey = e.key.indexOf('Arrow') !== 0
+			if (e.key === 'Tab' || isArrowKey) {
 				var tabbableEls = document.querySelectorAll(tabbableElsSelector),
 					lastTabbableEl = tabbableEls[tabbableEls.length - 1],
 					target = e.target;
-
+				
+				if (isArrowKey) {
+					setFocusOnElement(document.activeElement);
+				}
 				// if this is the last tabbable element, we want to make sure we tab
 				// outside of the web page (i.e. the browser UI), so we clear all
 				// tabIndexes.
@@ -134,12 +158,16 @@
 		}
 
 		function handleFirefoxFocusEvent(e) {
-			var target = e.target,
+			var target = e.target;
+			setFocusOnElement(target);
+		}
+		
+		function setFocusOnElement(target) {
 				tabbableEls = document.querySelectorAll(tabbableElsSelector),
 				index = clearAndFindIndex(tabbableEls, target),
 				prevTabbable = getClosestTabbable(tabbableEls, index, -1),
 				nextTabbable = getClosestTabbable(tabbableEls, index, 1);
-
+				
 				if (prevTabbable) {
 					setTabIndex(prevTabbable, tabIndexMax - 2);
 				}
@@ -159,7 +187,16 @@
 		me.init = function () {
 			if (isFirefoxDesktop && bodyEl.classList.contains('a11y-fix-firefox-flexbox')) {
 				fixFirefoxFlexbox();
+				
+				// We set up a mutation observer to ensure that if tabbable elements
+				// are added and removed from the DOM, we ensure tab indexes are 
+				// set correctly.
+				if (window.MutationObserver) {
+					observer = new MutationObserver(mutationObserver);
+					observer.observe(document.body, mutationConfig)
+				}
 			}
+			
 		};
 	};
 

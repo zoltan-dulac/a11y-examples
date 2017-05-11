@@ -66,24 +66,30 @@
 			</div>
 			
 			<h2>Re-Ordered Links</h2>
-			<div class="flex-example shuffled">
-				<a href="#" class="btn">
-					<strong>1</strong>
-					<br> This appears first in source order.
-				</a>
-				<a href="#" class="btn">
-					<strong>2</strong>
-					<br> This appears second in source order.
-				</a>
-				<a href="#" class="btn">
-					<strong>3</strong>
-					<br> This appears third in source order.
-				</a>
-				<a href="#" class="btn">
-					<strong>4</strong>
-					<br> This appears fourth in source order.
-				</a>
+			<div id="reordered-links-container">
+				<div class="flex-example shuffled">
+					<a href="#" class="btn">
+						<strong>1</strong>
+						<br> This appears first in source order.
+					</a>
+					<a href="#" class="btn">
+						<strong>2</strong>
+						<br> This appears second in source order.
+					</a>
+					<a href="#" class="btn">
+						<strong>3</strong>
+						<br> This appears third in source order.
+					</a>
+					<a href="#" class="btn">
+						<strong>4</strong>
+						<br> This appears fourth in source order.
+					</a>
+				</div>
 			</div>
+			
+			<button id="insert-nodes-above">Insert nodes above to test mutation observer</button>
+			
+			<div id="insertion-area"></div>
 			
 			<h2>Re-Ordered div elements with tabindex = 0 and role="button"</h2>
 			<div class="flex-example shuffled">
@@ -151,5 +157,17 @@
 			</p>
 		</main>
 		<script src="js/fixFirefoxFlexbox.js"></script>
+		<script>
+			var buttonEl = document.getElementById('insert-nodes-above'),
+				containerEl = document.getElementById('reordered-links-container'),
+				insertionAreaEl = document.getElementById('insertion-area');
+				
+			buttonEl.addEventListener('click', function() {
+				if (insertionAreaEl.innerHTML.trim() === '') {
+					insertionAreaEl.innerHTML = '<h2>JS inserted Nodes (to test mutation observer)</h2>'
+				}
+				insertionAreaEl.innerHTML += containerEl.innerHTML;
+			})
+		</script>
 	</body>
 </html>
