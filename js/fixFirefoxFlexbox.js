@@ -163,25 +163,24 @@
 		}
 		
 		function setFocusOnElement(target) {
-				tabbableEls = document.querySelectorAll(tabbableElsSelector),
-				index = clearAndFindIndex(tabbableEls, target),
-				prevTabbable = getClosestTabbable(tabbableEls, index, -1),
-				nextTabbable = getClosestTabbable(tabbableEls, index, 1);
-				
-				if (prevTabbable) {
-					setTabIndex(prevTabbable, tabIndexMax - 2);
-				}
+			tabbableEls = document.querySelectorAll(tabbableElsSelector),
+			index = clearAndFindIndex(tabbableEls, target),
+			prevTabbable = getClosestTabbable(tabbableEls, index, -1),
+			nextTabbable = getClosestTabbable(tabbableEls, index, 1);
+			
+			if (prevTabbable) {
+				setTabIndex(prevTabbable, tabIndexMax - 2);
+			}
 
-				if (nextTabbable) {
-					setTabIndex(nextTabbable, tabIndexMax);
-				}
+			if (nextTabbable) {
+				setTabIndex(nextTabbable, tabIndexMax);
+			}
 
-				// since it is possible to have anything with a tabIndex of -1 to hav
-				// focus programmatically, we need to ensure we check this condition.
-				if (target.tabIndex !== -1) {
-					setTabIndex(target, tabIndexMax - 1);
-				}
-
+			// since it is possible to have anything with a tabIndex of -1 to hav
+			// focus programmatically, we need to ensure we check this condition.
+			if (target.tabIndex !== -1) {
+				setTabIndex(target, tabIndexMax - 1);
+			}
 		}
 
 		me.init = function () {
