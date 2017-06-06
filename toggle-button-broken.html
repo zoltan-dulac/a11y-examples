@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>#TITLE#</title>
+		<meta name="description" content="#DESC#">
+		<meta name="author" content="Zoltan Hawryluk">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+		<link rel="stylesheet" href="css/toggle-button.css" />
+
+		<meta property="og:title" content="#TITLE#" />
+		<meta property="og:description" content="#DESC#" />
+		<meta property="og:image" content="social/toggle-button.jpg" />
+
+		<meta name="twitter:card" content="photo">
+		<meta name="twitter:title" content="#DESC#" />
+		<meta name="twitter:image" content="social/toggle-button.jpg">
+
+	</head>
+
+	<body>
+		
+		<div class="toggle-button-container">
+			<button id="signup" class="toggle-button">
+				Show Content
+			</button>
+			<span tabindex="-1" id="signup-temp-focus-area" class="toggle-temp-focus-area"></span>
+		</div>
+		
+		<section id="signup-content" class="toggle-content">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, ullamcorper et tortor nec, commodo bibendum felis. </p>
+			
+			<fieldset>
+				<legend>Signup for our newsletter!</legend>
+				
+				<label for="name">Name: </label><input type="text" id="name" name="name" value="">
+				<label for="email">Email: </label><input type="text" id="email" name="email" value=""> 
+			</fieldset>
+		</section>
+		
+		<a href="">Accessibility Policy</a>
+		<script src="js/toggle-button-broken.js"></script>
+	</body>
+</html>

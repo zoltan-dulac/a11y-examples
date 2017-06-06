@@ -145,3 +145,28 @@ iframe:not([tabindex="-1"]):focus:active,
 	 color: #777;
 	 opacity: 1;
 }
+
+
+/*
+ * Fieldsets resets are odd.  Solution from:
+ * https://thatemil.com/blog/2015/01/03/reset-your-fieldset/
+ *
+ * Note we removed the top padding fix in that page because it wasn't needed
+ * and it was causing a small pixel shift on some of the offers headings on
+ * the offers page.
+ */
+.fieldset-reset {
+	margin: auto 0;
+	padding: 0;
+	min-width: auto;
+	border: none;
+}
+
+/*
+ * A legend will try to put itself inside the fieldset border unless you
+ * do this
+ */
+.legend-reset {
+	float: left;
+	display: block;
+}
