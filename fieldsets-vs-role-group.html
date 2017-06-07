@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>#TITLE#</title>
+		<meta name="description" content="#DESC#">
+		<meta name="author" content="Zoltan Hawryluk">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+		<link rel="stylesheet" href="css/shared/reset.css" />
+		<link rel="stylesheet" href="css/shared/a11y.css" />
+		<link rel="stylesheet" href="css/fieldsets-vs-role-group.css" />
+
+		<meta property="og:title" content="#TITLE#" />
+		<meta property="og:description" content="#DESC#" />
+		<meta property="og:image" content="social/fieldsets-vs-role-group.jpg" />
+
+		<meta name="twitter:card" content="photo">
+		<meta name="twitter:title" content="#DESC#" />
+		<meta name="twitter:image" content="social/fieldsets-vs-role-group.jpg">
+
+		<script src="js/fieldsets-vs-role-group.js"></script>
+	</head>
+
+	<body>
+		<main aria-label="Registration Form">
+			
+			<form id="form2">
+				<fieldset class="fieldset-reset">
+					<legend id="heading1" class="legend-reset heading">
+						<span id="grp1">First Applicant</span>
+					</legend>
+					
+					<div class="field-separator">
+						<label for="name1">Name </label>
+						<span class="required-star" aria-hidden="true"> * </span>
+						<input id="name1" type="text" aria-required="true" required />
+					</div>
+					
+					<div class="field-separator">
+						<label for="dob1">Date of birth </label>
+						<span class="required-star" aria-hidden="true"> * </span>
+						<input id="dob1" type="text" size="10" aria-required="true" required aria-describedby="dob1-format" />
+						<div id="dob1-format" class="description"><b>Note: </b> Date should be in MM/DD/YYYY format</div>
+					</div>
+					
+					<div role="group" aria-labelledby="ssn1" class="ss-container">
+						<label id="ssn1">Social Security#</label><span class="required-star" aria-hidden="true"> * </span><span>
+							<input size="3" type="text" aria-required="true" aria-label="Social Security Number, first 3 digits" />
+							-
+							<input size="2" type="text" aria-required="true" aria-label="Social Security Number, next 2 digits" />
+							-
+							<input size="4" type="text" aria-required="true" aria-label="Social Security Number, last 4 digits" />
+						</span>
+					</div>
+					
+					
+				</fieldset>
+				
+				
+				<div role="group" aria-labelledby="grp2">
+					<h2 id="grp2" class="heading">Second Applicant</h2>
+					<div class="field-separator">
+						<label for="name2">Name </label>
+						<span class="required-star" aria-hidden="true"> * </span>
+						<input id="name2" type="text" aria-required="true" required />
+					</div>
+					
+					<div class="field-separator">
+						<label for="dob2">Date of birth </label>
+						<span class="required-star" aria-hidden="true"> * </span>
+						<input id="dob2" type="text" size="10" aria-required="true" required aria-describedby="dob2-format" />
+						<div id="dob2-format" class="description"><b>Note: </b> Date should be in MM/DD/YYYY format</div>
+					</div>
+					
+					<div role="group" aria-labelledby="ssn2" class="ss-container field-separator">
+						<label id="ssn2">Social Security#</label><span class="required-star" aria-hidden="true"> * </span><span>
+							<input size="3" type="text" aria-required="true" title="First 3 digits" />
+							-
+							<input size="2" type="text" aria-required="true" title="Next 2 digits" />
+							-
+							<input size="4" type="text" aria-required="true" title="Last 4 digits" />
+						</span>
+					</div>
+					
+					
+				</div>
+				
+				<input type="submit" value="Continue" />
+			</form>
+			
+		</main>
+		<footer role="contentinfo">
+			Created by Sailesh Panchang, Deque Systems | May 9, 2012
+			<br />
+			Edited by Paul J. Adam on May 17, 2012
+			<br />
+			Restyled by Zoltan Hawryluk, June 6, 2017
+		</footer>
+	</body>
+</html>

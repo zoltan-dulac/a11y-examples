@@ -13,8 +13,10 @@
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+		
+		<link rel="stylesheet" href="css/2.4.1-skip-nav.css" type="text/css" />
 		<link rel="stylesheet" href="css/toggle-button.css" />
-
+		
 		<meta property="og:title" content="#TITLE#" />
 		<meta property="og:description" content="#DESC#" />
 		<meta property="og:image" content="social/toggle-button.jpg" />
@@ -26,26 +28,109 @@
 	</head>
 
 	<body>
+		<a
+			href="#main-content" 
+			class="bypass-block-link visually-hidden visible-when-focused"
+		>
+			Skip Navigation
+		</a>
 		
-		<div class="toggle-button-container">
-			<button id="signup" class="toggle-button">
-				Show Content
-			</button>
-			<span tabindex="-1" id="signup-temp-focus-area" class="toggle-temp-focus-area"></span>
-		</div>
-		
-		<section id="signup-content" class="toggle-content">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, ullamcorper et tortor nec, commodo bibendum felis. </p>
+		<header>
+			<div class="logo">
+				<span class="acme">ACME</span> <span class="corp">Corporation</span>
+				<div class="motto">Quality Is Our #1 Dream</div>
+			</div>
 			
-			<fieldset>
-				<legend>Signup for our newsletter!</legend>
-				
-				<label for="name">Name: </label><input type="text" id="name" name="name" value="">
-				<label for="email">Email: </label><input type="text" id="email" name="email" value=""> 
-			</fieldset>
-		</section>
+			<nav>
+				<ul>
+					<li><a href="2.4.1-skip-nav.html">Home</a></li>
+					<li><a href="2.4.1-skip-nav.html">News</a></li>
+					<li><a href="2.4.1-skip-nav.html">About Us</a></li>
+					<li><a href="2.4.1-skip-nav.html">Leadership</a></li>
+					<li><a href="2.4.1-skip-nav.html">Our Employees</a></li>
+					<li><a href="2.4.1-skip-nav.html">Mission Statement</a></li>
+					<li><a href="2.4.1-skip-nav.html">Philanthropy</a></li>
+					<li><a href="2.4.1-skip-nav.html">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
 		
-		<a href="">Accessibility Policy</a>
+		<main id="main-content" class="bypass-block-target" tabindex="-1">
+			<h1>Account Management</h1>
+			
+			<p>Give us all your information so we can sell it to the highest bidder!</p>
+			
+			<ul>
+				<li>
+					<fieldset class="fieldset-reset toggle-button-container">
+						<legend id="signup-label" class="legend-reset toggle-button-label">Contact Information<span class="visually-hidden"> form, </span></legend>
+						<button id="signup" class="toggle-button">
+							Show Content
+						</button>
+						<span tabindex="-1" id="signup-temp-focus-area" class="toggle-temp-focus-area"></span>
+					</fieldset>
+					
+					<form id="signup-content" class="toggle-content">
+						
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, ullamcorper et tortor nec, commodo bibendum felis. </p>
+						
+						<fieldset>
+							<legend>Signup for our newsletter!</legend>
+							
+							<label for="name">Name: </label><input type="text" id="name" name="name" value="">
+							<label for="email">Email: </label><input type="text" id="email" name="email" value=""> 
+						</fieldset>
+					</form>
+				</li>
+				
+				<li>
+					<div class="toggle-button-container">
+						<div class="toggle-button-label">Payment Information</div>
+						<button id="payment" class="toggle-button">
+							Show Content
+						</button>
+						<span tabindex="-1" id="payment-temp-focus-area" class="toggle-temp-focus-area"></span>
+					</div>
+					
+					<form id="payment-content" class="toggle-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, ullamcorper et tortor nec, commodo bibendum felis. </p>
+						
+						<fieldset>
+							<legend>Signup for our newsletter!</legend>
+							
+							<label for="name">Name: </label><input type="text" id="name" name="name" value="">
+							<label for="email">Email: </label><input type="text" id="email" name="email" value=""> 
+						</fieldset>
+					</form>
+				</li>
+				
+				<li>
+					<div class="toggle-button-container">
+						<div class="toggle-button-label">Security</div>
+						<button id="password" class="toggle-button">
+							Show Content
+						</button>
+						<span tabindex="-1" id="password-temp-focus-area" class="toggle-temp-focus-area"></span>
+					</div>
+					
+					<form id="password-content" class="toggle-content">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam augue est, ullamcorper et tortor nec, commodo bibendum felis. </p>
+						
+						<fieldset>
+							<legend>Signup for our newsletter!</legend>
+							
+							<label for="name">Name: </label><input type="text" id="name" name="name" value="">
+							<label for="email">Email: </label><input type="text" id="email" name="email" value=""> 
+						</fieldset>
+					</form>
+				</li>
+			</ul>
+			
+		</main>
+		
+		<footer>
+			&copy; 2017, Acme Corporation. <a href="">Accessibility Policy</a>
+		</footer>
 		<script src="js/toggle-button-broken.js"></script>
 	</body>
 </html>

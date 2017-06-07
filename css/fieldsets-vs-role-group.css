@@ -1,0 +1,70 @@
+body {
+	margin: 1em;
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+	
+main,
+footer {
+	width: 600px;
+	margin: 0 auto !important;
+}
+	
+footer {
+	padding-top: 9em;
+	font-size: 0.5em;
+	text-align: center;
+	font-style: italic;
+	line-height: 1.2em;
+}
+	
+.required-star {
+	color: red;
+}
+
+label,
+.inline-legend {
+	display: inline-block;
+	width: 10em;
+	text-align: right;
+}
+
+:enabled + label {
+	display: inline;
+}
+
+[type="text"] {
+	width: 30em;
+	margin-bottom: 0.4em;
+}
+
+.field-separator {
+	margin-bottom: 1em;
+}
+
+.ss-container [type="text"] {
+	width: auto;
+} 
+
+.heading {
+	float: none;
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	padding: 1em 0 0.2em 0.4em;
+	border-bottom: solid 1px #cccccc !important;
+	width: 100%;
+}
+
+fieldset.fieldset-reset {
+	margin: 1em;
+}
+
+.description {
+	margin-left: 11em;
+	width: 100%;
+}
+
+input[type="submit"] {
+	display: block;
+	margin: 0 auto;
+	font-size: 2em;
+}
