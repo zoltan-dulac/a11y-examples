@@ -1,0 +1,12 @@
+.quoted:before {
+  content: "“";
+}
+.quoted:after {
+  content: "”";
+}
+.bracketed:before {
+  content: "(";
+}
+.bracketed:after {
+  content: ")";
+}

@@ -8,6 +8,8 @@
   padding: 0;
   margin: 0;
 }
+
+
 .example-main {
   display: block;
   box-sizing: border-box;
@@ -15,10 +17,11 @@
   margin: 1em auto;
   padding: 1em 2em;
   color: #000;
-  background-color: rgba(204, 204, 204, 0.7);
-  border: 0.07em solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(204, 204, 204, .7);
+  border: .07em solid rgba(0, 0, 0, .5);
   border-radius: .5em;
 }
+
 .btn {
   text-align: center;
   font-size: 100%;
@@ -31,6 +34,7 @@
   background: #fff;
   text-decoration: none;
 }
+
 .btn strong {
   display: block;
   box-sizing: border-box;
@@ -46,36 +50,45 @@
   border: .1em solid #fff;
   text-decoration: none;
 }
+
 .btn:hover,
 .btn:focus {
   background-color: #060;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1em rgba(0, 0, 0, .5);
   color: #fff;
   outline: none;
 }
+
 div + div {
   margin-top: 1em;
 }
+
 .flex-example {
   display: inline-flex;
   justify-content: space-around;
   width: 100%;
 }
+
 .example-main > div .btn {
   width: 23%;
 }
+
 div.shuffled .btn:nth-child(1) {
   order: 2;
 }
+
 div.shuffled .btn:nth-child(2) {
   order: 4;
 }
+
 div.shuffled .btn:nth-child(3) {
   order: 1;
 }
+
 div.shuffled .btn:nth-child(4) {
   order: 3;
 }
+
 div.shuffled .btn:hover,
 div.shuffled .btn:focus {
   background-color: #600;

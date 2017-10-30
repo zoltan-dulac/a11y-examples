@@ -1,3 +1,13 @@
+@tabbable-selector: ~"a[href]:not([tabindex="-1"]),
+	area:not([tabindex="-1"]),
+	[role="button"]:not([tabindex="-1"]),
+	[role="link"]:not([tabindex="-1"]),
+	iframe:not([tabindex="-1"]),
+	[contentEditable=true]:not([tabindex="-1"]),
+	:enabled:not([tabindex="-1"]),
+	[tabindex]:not([tabindex="-1"])"; 
+
+
 /*
  * Class for elements that are only visible to the screen reader. From
  * https://www.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/
@@ -70,26 +80,27 @@
  * focus state of a button different than that of a form element. 
  */
 .bypass-block-target:focus:target,
-[tabindex="0"]:focus,
-[tabindex="1"]:focus,
-a:focus,
-button:focus,
-input:focus {
+ {
 	outline: solid 2px orange;
 	border: none;
 }
 
+a[href]:not([tabindex="-1"]),
+area:not([tabindex="-1"]),
+[role="button"]:not([tabindex="-1"]),
+[role="link"]:not([tabindex="-1"]),
+iframe:not([tabindex="-1"]),
+[contentEditable=true]:not([tabindex="-1"]),
+:enabled:not([tabindex="-1"]),
+[tabindex]:not([tabindex="-1"]) {
+	&:focus {
+		outline: solid 2px orange;
+		border: none;
+	}
 
-[tabindex="0"]:hover:focus,
-[tabindex="1"]:hover:focus,
-a:hover:focus,
-button:hover:focus,
-input:hover:focus,
-[tabindex="0"]:focus:active,
-[tabindex="1"]:focus:active,
-a:focus:active,
-button:focus:active,
-input:focus:active {
-	outline: none;
-	border: none;
+	&:hover:focus,
+	&:focus:active {
+		outline: none;
+		border: none;
+	}
 }
