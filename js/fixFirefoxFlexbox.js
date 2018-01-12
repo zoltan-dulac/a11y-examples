@@ -18,9 +18,13 @@
 	}
 }(this, function(postal) {
 	var fixFirefoxFlexbox = new function () {
+		console.log(userAgent)
 		var me = this,
-			userAgent = navigator.userAgent;
-			isFirefoxDesktop = userAgent.indexOf('Firefox') > -1 && userAgent.indexOf('Mobile') == -1,
+			userAgent = navigator.userAgent,
+			firefoxIndex = userAgent.indexOf('Firefox'),
+			isFirefoxDesktop = firefoxIndex > -1 && userAgent.indexOf('Mobile') == -1,
+			firefoxVersion = isFirefoxDesktop ? parseFloat(userAgent.substr(firefoxIndex + 8)) : -1,
+			isBadFirefox = firefoxVersion !== -1 && firefoxVersion >= 56,
 			bodyEl = document.body,
 			tabbableElsSelector = 'a[href]:not([tabindex="-1"]), ' + 
 				'area:not([tabindex="-1"]), [role="button"]:not([tabindex="-1"]), ' + 
@@ -29,7 +33,7 @@
 			// This is the max amount a tabindex can have according to 
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex
 			tabIndexMax = 32767;
-		
+
 		function fixFirefoxFlexbox() {
 			bodyEl.addEventListener('focus', handleFirefoxFocusEvent, true);
 			bodyEl.addEventListener('blur', handleFirefoxBlurEvent, true);
@@ -126,7 +130,7 @@
 		}
 		
 		me.init = function () {
-			if (isFirefoxDesktop && bodyEl.classList.contains('a11y-fix-firefox-flexbox')) {
+			if (isBadFirefox && bodyEl.classList.contains('a11y-fix-firefox-flexbox')) {
 				fixFirefoxFlexbox();
 			}
 		};
